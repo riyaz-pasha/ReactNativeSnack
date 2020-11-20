@@ -2,28 +2,28 @@ import { IconFamily, SnackType } from './Enums';
 
 export * from './Enums';
 
-export type SnackConfig = {
-  accentColor?: string;
+export type Theme = {
   backgroundColor?: string;
-  borderColor?: string;
+  iconColor?: string;
   closeButtonBackgroundColor?: string;
-  closeButtonBorderRadius?: number;
   closeIconColor?: string;
-  color?: string;
+  successColor?: string;
+  errorColor?: string;
+  infoColor?: string;
+};
+
+export type SnackConfig = {
+  borderColor?: string;
+  closeButtonBorderRadius?: number;
   duration?: number;
   hideIcon?: boolean;
   snackType?: SnackType;
   message: string;
   onPress?: () => void;
-  shouldVibrate?: boolean;
   subMessage?: string;
   iconFamily?: IconFamily;
   iconName?: string;
-  iconColor?: string;
-  successColor?: string;
-  errorColor?: string;
-  infoColor?: string;
-};
+} & Theme;
 
 export type SnackInternalConfig = {
   id?: string;

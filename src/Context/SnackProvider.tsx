@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { LayoutAnimation, StyleSheet, UIManager, View } from 'react-native';
 import { Snack } from '../Snack';
-import { FullSnackConfig, SnackConfig } from '../Types';
+import { FullSnackConfig, SnackConfig, Theme } from '../Types';
 import uuid from '../utils/UUID';
 
 type SnackContextType = {
@@ -16,7 +16,11 @@ export const useSnack = () => React.useContext(SnackContext);
 
 UIManager && UIManager.setLayoutAnimationEnabledExperimental && UIManager.setLayoutAnimationEnabledExperimental(true);
 
-const SnackProvider = ({ children }) => {
+type SnackProviderProps = {
+  children: React.ReactNode;
+  theme?: Theme;
+};
+const SnackProvider = ({ children, theme }: SnackProviderProps) => {
   const [snacks, setSnacks] = useState<FullSnackConfig[]>([]);
 
   const hideSnack = (id: string) => {
@@ -29,6 +33,7 @@ const SnackProvider = ({ children }) => {
     setSnacks((prevSnacks: FullSnackConfig[]) => [
       ...prevSnacks,
       {
+        ...theme,
         ...newSnack,
         index: prevSnacks.length,
         id: uuid(),
