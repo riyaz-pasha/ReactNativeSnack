@@ -35,7 +35,6 @@ const SnackProvider = ({ children, theme }: SnackProviderProps) => {
       {
         ...theme,
         ...newSnack,
-        index: prevSnacks.length,
         id: uuid(),
         onClose: hideSnack,
       },

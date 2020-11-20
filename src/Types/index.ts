@@ -27,7 +27,6 @@ export type SnackConfig = {
 
 export type SnackInternalConfig = {
   id?: string;
-  index?: number;
   onClose?: (id: string) => void;
 };
 
