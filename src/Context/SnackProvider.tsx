@@ -28,17 +28,15 @@ const SnackProvider = ({ children, theme }: SnackProviderProps) => {
     setSnacks((prevSnacks) => prevSnacks.filter((el) => el.id !== id));
   };
 
-  const snack = (newSnack: SnackConfig) => {
+  const snack = (snackConfig: SnackConfig) => {
     LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
-    setSnacks((prevSnacks: FullSnackConfig[]) => [
-      ...prevSnacks,
-      {
-        ...theme,
-        ...newSnack,
-        id: uuid(),
-        onClose: hideSnack,
-      },
-    ]);
+    const newSnack = {
+      ...theme,
+      ...snackConfig,
+      id: uuid(),
+      onClose: hideSnack,
+    };
+    setSnacks((prevSnacks: FullSnackConfig[]) => [...prevSnacks, newSnack]);
   };
 
   return (
