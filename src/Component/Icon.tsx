@@ -21,7 +21,12 @@ type IconProps = {
   testID?: string;
 };
 
-const Icon: React.FC<IconProps> = ({ size = 20, color = 'green', family = 'Feather', name = 'check-circle' }) => {
+export const Icon: React.FC<IconProps> = ({
+  size = 20,
+  color = 'green',
+  family = 'Feather',
+  name = 'check-circle',
+}) => {
   let VectorIcon;
   switch (family) {
     case 'Entypo':

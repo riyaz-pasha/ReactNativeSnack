@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { LayoutAnimation, StyleSheet, UIManager, View } from 'react-native';
-import Snack, { FullSnackConfig, SnackConfig } from '../Component/Snack';
+import { Snack } from '../Snack';
+import { FullSnackConfig, SnackConfig } from '../Types';
 import uuid from '../utils/UUID';
 
 type SnackContextType = {

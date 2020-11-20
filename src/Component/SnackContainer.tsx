@@ -19,8 +19,6 @@ export const SnackContainer = ({ style, onPress, children }: SnackContainerType)
   );
 };
 
-export default SnackContainer;
-
 const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,

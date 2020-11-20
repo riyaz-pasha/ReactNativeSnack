@@ -1,11 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import { Animated, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Accent, Icon, SnackContainer } from '../Component';
 import { FullSnackConfig, SnackType } from '../Types';
-import Accent from './Accent';
-import Icon from './Icon';
-import SnackContainer from './SnackContainer';
 
-const Snack = ({
+export const Snack = ({
   message,
   subMessage,
   onClose,

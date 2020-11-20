@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, ViewProps } from 'react-native';
 
-const Accent = ({ color, ...props }: { color: string } & ViewProps) => (
+export const Accent = ({ color, ...props }: { color: string } & ViewProps) => (
   <View style={[styles.borderStyle, { borderColor: color }]} {...props} />
 );
 
